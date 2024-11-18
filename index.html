@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Sex Position Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .position {
+            font-size: 24px;
+            margin: 20px 0;
+            color: #444;
+            font-weight: bold;
+        }
+        .button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            font-size: 20px;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #e63946;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Random Sex Position Generator</h1>
+        <p>Click "Generate" to get a random position!</p>
+        <div class="position" id="position">💋 Press Generate 💋</div>
+        <button class="button" onclick="generatePosition()">Generate</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function generatePosition() {
+            // List of 30 sex positions
+            const positions = [
+                "Missionary",
+                "Doggy Style",
+                "Cowgirl",
+                "Reverse Cowgirl",
+                "Spooning",
+                "Standing",
+                "The Butterfly",
+                "The Lotus",
+                "The Pretzel Dip",
+                "The Bridge",
+                "The Tabletop",
+                "The T-Bone",
+                "The Seashell",
+                "The Chair",
+                "The X Factor",
+                "The Lazy Dog",
+                "The Flatiron",
+                "Face Off",
+                "The Kneeling Wheelbarrow",
+                "The Crab Walk",
+                "The Scoop Me Up",
+                "The Standing Split",
+                "The Cuddle Huddle",
+                "The Pinball Wizard",
+                "The Hoverboard",
+                "The Magic Mountain",
+                "The G-Whiz",
+                "The Couch Straddle",
+                "The Deep Dive",
+                "The Standing Ovation"
+            ];
+
+            // Show loading message
+            const positionElement = document.getElementById("position");
+            const resultElement = document.getElementById("result");
+
+            positionElement.textContent = "🔄 Loading...";
+            resultElement.textContent = "";
+
+            // Delay result display
+            setTimeout(() => {
+                // Generate a random position
+                const randomIndex = Math.floor(Math.random() * positions.length);
+                const randomPosition = positions[randomIndex];
+
+                // Display the random position
+                positionElement.textContent = `🔥 ${randomPosition} 🔥`;
+                resultElement.textContent = "Enjoy exploring!";
+            }, 2000); // 2-second delay
+        }
+    </script>
+</body>
+</html>
