@@ -1,218 +1,125 @@
-// Comprehensive sex positions database with 100+ positions
+// Comprehensive sex positions database based on popular guides and SheKnows recommendations
 const sexPositions = [
-    // Classic Positions (1-20)
-    { name: "Missionary", description: "Classic face-to-face position with intimate eye contact. One partner lies on their back while the other lies on top.", howTo: "Partner A: Lie flat on back, legs slightly apart, knees can be bent or straight. Partner B: Position on top, supporting body weight on forearms or hands, legs positioned between or outside Partner A's legs. Bodies align front-to-front with Partner B's pelvis over Partner A's." },
-    { name: "Doggy Style", description: "Rear-entry position where one partner bends over while the other enters from behind, allowing for deep penetration.", howTo: "Partner A: Get on hands and knees, back arched naturally, head can rest on pillows or stay upright. Partner B: Kneel behind Partner A, thighs parallel to Partner A's, hands positioned on Partner A's hips, lower back, or shoulders for stability." },
-    { name: "Cowgirl", description: "Woman on top position where the receiving partner straddles and controls the rhythm and depth.", howTo: "Partner A: Lie on back with legs extended or slightly bent. Partner B: Straddle Partner A facing forward, knees on either side of Partner A's torso, hands can rest on Partner A's chest, abs, or the bed for balance and control." },
-    { name: "Reverse Cowgirl", description: "Woman on top but facing away, allowing for different sensations and visual appeal.", howTo: "Partner A: Lie on back with legs extended. Partner B: Straddle Partner A facing away (toward Partner A's feet), knees positioned on either side of Partner A's hips, hands rest on Partner A's thighs, knees, or the bed for support." },
-    { name: "Spooning", description: "Side-by-side position where partners lie like spoons, intimate and comfortable for extended sessions.", howTo: "Partner A: Lie on side in comfortable position. Partner B: Lie on same side behind Partner A, body curved to match Partner A's shape, chest against Partner A's back, with arm placement around waist or under head." },
-    { name: "Standing", description: "Upright position that can be done against a wall or free-standing for adventurous couples.", howTo: "Partner A: Stand with back against wall or face the wall, feet shoulder-width apart. Partner B: Stand facing Partner A, adjusting height difference by stepping closer or using steps. Partner A's arms can wrap around Partner B's neck/shoulders, Partner B's hands support Partner A's thighs or hips." },
-    { name: "The Lotus", description: "Sitting position where partners face each other with legs wrapped around, perfect for intimacy and connection.", howTo: "Partner A: Sit cross-legged on bed or floor with straight posture. Partner B: Sit on Partner A's lap facing them, legs wrapped around Partner A's waist/lower back. Both partners' arms embrace each other's torso, maintaining close chest-to-chest contact." },
-    { name: "The Bridge", description: "Advanced position requiring flexibility where one partner creates a bridge arch.", howTo: "Partner A: Lie on back, then lift hips high into bridge position using hands and feet as support points, creating an arch. Partner B: Kneel or stand between Partner A's legs, supporting Partner A's lower back/hips while maintaining the bridge structure." },
-    { name: "Side Straddle", description: "Creative side position combining elements of spooning with more active movement.", howTo: "Partner A: Lie on side, lift top leg up and back. Partner B: Position behind Partner A in modified spooning, with one leg between Partner A's legs and one leg over Partner A's raised thigh. Partner A's raised leg rests on Partner B's hip/thigh." },
-    { name: "The Chair", description: "Utilizes furniture for support and new angles of intimacy and comfort.", howTo: "Partner A: Sit on sturdy chair with feet flat on floor, back against chair back. Partner B: Straddle Partner A either facing forward or backward, knees on either side of Partner A's hips, using chair arms or Partner A's shoulders for support and balance." },
-    { name: "The Butterfly", description: "Partner lies on edge of bed/surface with hips positioned for optimal angle and comfort.", howTo: "Partner A: Lie on back at edge of bed, hips right at the edge, legs can hang down or be supported. Partner B: Stand between Partner A's legs, height adjusted by bending knees or using a step, hands support Partner A's thighs or hips." },
-    { name: "The Pretzel Dip", description: "Complex position combining multiple angles for varied sensations and deep connection.", howTo: "Partner A: Lie on side with bottom leg straight, top leg bent and crossed over. Partner B: Position perpendicular to Partner A, one leg under Partner A's straight leg, one leg over Partner A's bent leg, creating an interwoven structure." },
-    { name: "The Seashell", description: "Flexible position where receiving partner's legs are positioned for maximum intimacy.", howTo: "Partner A: Lie on back, pull knees up toward chest and shoulders, ankles near ears if flexible. Partner B: Kneel close to Partner A, leaning forward over Partner A's folded body, hands can support Partner A's ankles or thighs." },
-    { name: "The Tabletop", description: "Partner positioned on a table or elevated surface for height variation and comfort.", image: "https://images.pexels.com/photos/16251532/pexels-photo-16251532.jpeg" },
-    { name: "The T-Bone", description: "Perpendicular position creating a T-shape for unique angles and sensations.", image: "https://images.pexels.com/photos/5851702/pexels-photo-5851702.jpeg" },
-    { name: "The X Factor", description: "Crossing position that creates intense intimacy through unique body positioning.", image: "https://images.pexels.com/photos/12675574/pexels-photo-12675574.jpeg" },
-    { name: "The Lazy Dog", description: "Relaxed variation of doggy style with more comfort for extended sessions.", image: "https://images.pexels.com/photos/6899789/pexels-photo-6899789.jpeg" },
-    { name: "The Flatiron", description: "Lying flat position with legs closed for increased tightness and sensation.", image: "https://images.pexels.com/photos/16251532/pexels-photo-16251532.jpeg" },
-    { name: "Face Off", description: "Intense eye contact position while seated, perfect for emotional connection.", image: "https://images.pexels.com/photos/5851702/pexels-photo-5851702.jpeg" },
-    { name: "The Wheelbarrow", description: "Adventurous position requiring strength and balance for the thrill-seeking couple.", image: "https://images.pexels.com/photos/12675574/pexels-photo-12675574.jpeg" },
-
-    // Advanced Positions (21-50)
-    { name: "The Crab Walk", description: "Playful and challenging position that requires coordination and flexibility.", image: "https://images.pexels.com/photos/6899789/pexels-photo-6899789.jpeg" },
-    { name: "The Scoop Me Up", description: "Comfortable spooning variation with enhanced intimacy and ease of movement.", image: "https://images.pexels.com/photos/16251532/pexels-photo-16251532.jpeg" },
-    { name: "The Standing Split", description: "Advanced standing position requiring flexibility and balance for adventurous partners.", image: "https://images.pexels.com/photos/5851702/pexels-photo-5851702.jpeg" },
-    { name: "The Cuddle Huddle", description: "Intimate position focused on closeness and emotional connection during intimacy.", image: "https://images.pexels.com/photos/12675574/pexels-photo-12675574.jpeg" },
-    { name: "The Pinball Wizard", description: "Dynamic position with lots of movement and energy for playful couples.", image: "https://images.pexels.com/photos/6899789/pexels-photo-6899789.jpeg" },
-    { name: "The Hoverboard", description: "Challenging position that seems to defy gravity, requiring strength and coordination.", image: "https://images.pexels.com/photos/16251532/pexels-photo-16251532.jpeg" },
-    { name: "The Magic Mountain", description: "Ultimate challenge position combining flexibility, strength, and adventure for experienced couples.", image: "https://images.pexels.com/photos/5851702/pexels-photo-5851702.jpeg" },
-    { name: "The Twisted Sister", description: "Creative twist on classic positions with intertwined legs for unique sensations.", image: "https://images.pexels.com/photos/12675574/pexels-photo-12675574.jpeg" },
-    { name: "The Swing Set", description: "Playful position utilizing momentum and rhythm for dynamic intimacy.", image: "https://images.pexels.com/photos/6899789/pexels-photo-6899789.jpeg" },
-    { name: "The Captain's Chair", description: "Seated position with one partner in control, perfect for deep eye contact.", image: "https://images.pexels.com/photos/16251532/pexels-photo-16251532.jpeg" },
-    { name: "The Tango Twist", description: "Dance-inspired position with passionate movements and intimate connection.", image: "https://images.pexels.com/photos/5851702/pexels-photo-5851702.jpeg" },
-    { name: "The Stairway to Heaven", description: "Elevated position using stairs or steps for varied heights and angles.", image: "https://images.pexels.com/photos/12675574/pexels-photo-12675574.jpeg" },
-    { name: "The Venus Flytrap", description: "Intimate position with receiving partner controlling the action through leg movement.", image: "https://images.pexels.com/photos/6899789/pexels-photo-6899789.jpeg" },
-    { name: "The Rocket Ship", description: "Energetic position with upward motion for an exciting intimate experience.", image: "https://images.pexels.com/photos/16251532/pexels-photo-16251532.jpeg" },
-    { name: "The Zen Garden", description: "Peaceful and meditative position focusing on slow, mindful movements.", image: "https://images.pexels.com/photos/5851702/pexels-photo-5851702.jpeg" },
-    { name: "The Tornado", description: "Spinning variation that adds excitement and unpredictability to intimacy.", image: "https://images.pexels.com/photos/12675574/pexels-photo-12675574.jpeg" },
-    { name: "The Eagle's Nest", description: "Elevated position with one partner lifted for a bird's eye view experience.", image: "https://images.pexels.com/photos/6899789/pexels-photo-6899789.jpeg" },
-    { name: "The Lighthouse", description: "Standing position with one partner as the beacon guiding the intimate journey.", image: "https://images.pexels.com/photos/16251532/pexels-photo-16251532.jpeg" },
-    { name: "The Ocean Wave", description: "Fluid, rhythmic position mimicking the gentle motion of ocean waves.", image: "https://images.pexels.com/photos/5851702/pexels-photo-5851702.jpeg" },
-    { name: "The Fire Dance", description: "Passionate and energetic position with lots of heat and movement.", image: "https://images.pexels.com/photos/12675574/pexels-photo-12675574.jpeg" },
-    { name: "The Silk Road", description: "Smooth and luxurious position focusing on sensual, flowing movements.", image: "https://images.pexels.com/photos/6899789/pexels-photo-6899789.jpeg" },
-    { name: "The Compass Rose", description: "Multi-directional position exploring all angles and orientations.", image: "https://images.pexels.com/photos/16251532/pexels-photo-16251532.jpeg" },
-    { name: "The Constellation", description: "Stargazing position perfect for outdoor adventures under the night sky.", image: "https://images.pexels.com/photos/5851702/pexels-photo-5851702.jpeg" },
-    { name: "The Time Warp", description: "Position that makes time stand still through intense intimate connection.", image: "https://images.pexels.com/photos/12675574/pexels-photo-12675574.jpeg" },
-    { name: "The Dream Catcher", description: "Ethereal position that captures and fulfills intimate dreams and fantasies.", image: "https://images.pexels.com/photos/6899789/pexels-photo-6899789.jpeg" },
-    { name: "The Golden Gate", description: "Bridge-like position creating a golden pathway to intimate bliss.", image: "https://images.pexels.com/photos/16251532/pexels-photo-16251532.jpeg" },
-    { name: "The Secret Garden", description: "Hidden and intimate position for exploring each other's secret desires.", image: "https://images.pexels.com/photos/5851702/pexels-photo-5851702.jpeg" },
-    { name: "The Phoenix Rising", description: "Passionate position that ignites and rises like a phoenix from the flames.", image: "https://images.pexels.com/photos/12675574/pexels-photo-12675574.jpeg" },
-    { name: "The Midnight Express", description: "Fast-paced position for couples who like their intimacy with speed and excitement.", image: "https://images.pexels.com/photos/6899789/pexels-photo-6899789.jpeg" },
-    { name: "The Crystal Cave", description: "Mysterious and enchanting position for exploring hidden depths of intimacy.", image: "https://images.pexels.com/photos/16251532/pexels-photo-16251532.jpeg" },
-
-    // Creative Positions (51-80)
-    { name: "The Yoga Master", description: "Flexibility-focused position inspired by yoga poses for mindful intimacy.", image: "https://images.pexels.com/photos/5851702/pexels-photo-5851702.jpeg" },
-    { name: "The Artist's Canvas", description: "Creative position where bodies become the canvas for intimate expression.", image: "https://images.pexels.com/photos/12675574/pexels-photo-12675574.jpeg" },
-    { name: "The Symphony", description: "Harmonious position where bodies move in perfect musical rhythm.", image: "https://images.pexels.com/photos/6899789/pexels-photo-6899789.jpeg" },
-    { name: "The Magic Carpet", description: "Floating sensation position that takes you on an intimate journey.", image: "https://images.pexels.com/photos/16251532/pexels-photo-16251532.jpeg" },
-    { name: "The Roller Coaster", description: "Thrilling ups and downs for couples who love excitement in their intimacy.", image: "https://images.pexels.com/photos/5851702/pexels-photo-5851702.jpeg" },
-    { name: "The Treasure Hunt", description: "Exploratory position for discovering new erogenous zones and pleasures.", image: "https://images.pexels.com/photos/12675574/pexels-photo-12675574.jpeg" },
-    { name: "The Time Machine", description: "Position that transports you to different eras of passionate love.", image: "https://images.pexels.com/photos/6899789/pexels-photo-6899789.jpeg" },
-    { name: "The Puzzle Piece", description: "Perfect fit position where bodies interlock like complementary puzzle pieces.", image: "https://images.pexels.com/photos/16251532/pexels-photo-16251532.jpeg" },
-    { name: "The Shooting Star", description: "Quick and bright position that leaves a lasting impression.", image: "https://images.pexels.com/photos/5851702/pexels-photo-5851702.jpeg" },
-    { name: "The Infinity Pool", description: "Endless pleasure position with no boundaries or limits.", image: "https://images.pexels.com/photos/12675574/pexels-photo-12675574.jpeg" },
-    { name: "The Kaleidoscope", description: "Ever-changing position with beautiful patterns of movement and sensation.", image: "https://images.pexels.com/photos/6899789/pexels-photo-6899789.jpeg" },
-    { name: "The Moonbeam", description: "Gentle and illuminating position perfect for romantic nighttime encounters.", image: "https://images.pexels.com/photos/16251532/pexels-photo-16251532.jpeg" },
-    { name: "The Solar Eclipse", description: "Rare and special position for extraordinary intimate moments.", image: "https://images.pexels.com/photos/5851702/pexels-photo-5851702.jpeg" },
-    { name: "The Origami", description: "Intricate folding position that creates beautiful intimate sculptures.", image: "https://images.pexels.com/photos/12675574/pexels-photo-12675574.jpeg" },
-    { name: "The Waterfall", description: "Cascading position with flowing movements like water over rocks.", image: "https://images.pexels.com/photos/6899789/pexels-photo-6899789.jpeg" },
-    { name: "The Northern Lights", description: "Spectacular position that creates colorful waves of pleasure.", image: "https://images.pexels.com/photos/16251532/pexels-photo-16251532.jpeg" },
-    { name: "The Compass", description: "Directional position that helps you navigate to new intimate territories.", image: "https://images.pexels.com/photos/5851702/pexels-photo-5851702.jpeg" },
-    { name: "The Prism", description: "Position that refracts intimacy into a spectrum of colorful sensations.", image: "https://images.pexels.com/photos/12675574/pexels-photo-12675574.jpeg" },
-    { name: "The Metamorphosis", description: "Transformative position that evolves throughout the intimate experience.", image: "https://images.pexels.com/photos/6899789/pexels-photo-6899789.jpeg" },
-    { name: "The Labyrinth", description: "Complex position with twists and turns leading to the center of pleasure.", image: "https://images.pexels.com/photos/16251532/pexels-photo-16251532.jpeg" },
-    { name: "The Mandala", description: "Circular position creating sacred geometry with intertwined bodies.", image: "https://images.pexels.com/photos/5851702/pexels-photo-5851702.jpeg" },
-    { name: "The Spiral Galaxy", description: "Cosmic position that spirals into infinite depths of intimacy.", image: "https://images.pexels.com/photos/12675574/pexels-photo-12675574.jpeg" },
-    { name: "The Diamond Mine", description: "Precious position for discovering hidden gems of pleasure.", image: "https://images.pexels.com/photos/6899789/pexels-photo-6899789.jpeg" },
-    { name: "The Quicksand", description: "Slowly sinking position that gradually increases in intensity.", image: "https://images.pexels.com/photos/16251532/pexels-photo-16251532.jpeg" },
-    { name: "The Thunderstorm", description: "Powerful position with building tension and explosive release.", image: "https://images.pexels.com/photos/5851702/pexels-photo-5851702.jpeg" },
-    { name: "The Oasis", description: "Refreshing position that provides relief and rejuvenation.", image: "https://images.pexels.com/photos/12675574/pexels-photo-12675574.jpeg" },
-    { name: "The Mirage", description: "Illusion-like position that seems too good to be true but is completely real.", image: "https://images.pexels.com/photos/6899789/pexels-photo-6899789.jpeg" },
-    { name: "The Avalanche", description: "Overwhelming position that builds momentum and sweeps you away.", image: "https://images.pexels.com/photos/16251532/pexels-photo-16251532.jpeg" },
-    { name: "The Greenhouse", description: "Nurturing position that helps intimate seeds blossom into beautiful experiences.", image: "https://images.pexels.com/photos/5851702/pexels-photo-5851702.jpeg" },
-    { name: "The Clockwork", description: "Precise and rhythmic position with perfect timing and synchronization.", image: "https://images.pexels.com/photos/12675574/pexels-photo-12675574.jpeg" },
-
-    // Exotic Positions (81-110)
-    { name: "The Bermuda Triangle", description: "Mysterious position where normal rules don't apply and magic happens.", image: "https://images.pexels.com/photos/6899789/pexels-photo-6899789.jpeg" },
-    { name: "The Silk Scarf", description: "Smooth and luxurious position with flowing, silky movements.", image: "https://images.pexels.com/photos/16251532/pexels-photo-16251532.jpeg" },
-    { name: "The DNA Helix", description: "Double-twisted position creating the building blocks of intimate life.", image: "https://images.pexels.com/photos/5851702/pexels-photo-5851702.jpeg" },
-    { name: "The Lava Lamp", description: "Slowly flowing position with mesmerizing, hypnotic movements.", image: "https://images.pexels.com/photos/12675574/pexels-photo-12675574.jpeg" },
-    { name: "The Wind Chime", description: "Gentle position with subtle movements that create harmonious sensations.", image: "https://images.pexels.com/photos/6899789/pexels-photo-6899789.jpeg" },
-    { name: "The Rubik's Cube", description: "Complex position that requires patience and skill to solve perfectly.", image: "https://images.pexels.com/photos/16251532/pexels-photo-16251532.jpeg" },
-    { name: "The Pendulum", description: "Swinging position with rhythmic back-and-forth movements.", image: "https://images.pexels.com/photos/5851702/pexels-photo-5851702.jpeg" },
-    { name: "The Telescope", description: "Far-reaching position for exploring distant galaxies of pleasure.", image: "https://images.pexels.com/photos/12675574/pexels-photo-12675574.jpeg" },
-    { name: "The Anchor", description: "Steady and secure position that keeps you grounded in the moment.", image: "https://images.pexels.com/photos/6899789/pexels-photo-6899789.jpeg" },
-    { name: "The Shooting Range", description: "Precision position for hitting the target every time.", image: "https://images.pexels.com/photos/16251532/pexels-photo-16251532.jpeg" },
-    { name: "The Velvet Rope", description: "Exclusive position for VIP intimate experiences.", image: "https://images.pexels.com/photos/5851702/pexels-photo-5851702.jpeg" },
-    { name: "The Time Capsule", description: "Position that preserves the perfect moment for eternity.", image: "https://images.pexels.com/photos/12675574/pexels-photo-12675574.jpeg" },
-    { name: "The Memory Foam", description: "Adaptable position that molds to your unique intimate needs.", image: "https://images.pexels.com/photos/6899789/pexels-photo-6899789.jpeg" },
-    { name: "The Hologram", description: "Multi-dimensional position that exists on multiple planes of pleasure.", image: "https://images.pexels.com/photos/16251532/pexels-photo-16251532.jpeg" },
-    { name: "The Soundwave", description: "Vibrational position that creates perfect acoustic intimacy.", image: "https://images.pexels.com/photos/5851702/pexels-photo-5851702.jpeg" },
-    { name: "The Tesla Coil", description: "Electrifying position that generates sparks of passionate energy.", image: "https://images.pexels.com/photos/12675574/pexels-photo-12675574.jpeg" },
-    { name: "The Gravity Well", description: "Position so intense it bends space-time around your bodies.", image: "https://images.pexels.com/photos/6899789/pexels-photo-6899789.jpeg" },
-    { name: "The Fibonacci", description: "Mathematical position following the golden ratio of intimate perfection.", image: "https://images.pexels.com/photos/16251532/pexels-photo-16251532.jpeg" },
-    { name: "The Butterfly Effect", description: "Small changes in position create massive waves of pleasure.", image: "https://images.pexels.com/photos/5851702/pexels-photo-5851702.jpeg" },
-    { name: "The Quantum Leap", description: "Position that transcends normal physical limitations.", image: "https://images.pexels.com/photos/12675574/pexels-photo-12675574.jpeg" },
-    { name: "The Black Hole", description: "Inescapable position with infinite gravitational pull.", image: "https://images.pexels.com/photos/6899789/pexels-photo-6899789.jpeg" },
-    { name: "The Aurora", description: "Shimmering position that creates dancing lights of sensation.", image: "https://images.pexels.com/photos/16251532/pexels-photo-16251532.jpeg" },
-    { name: "The Wormhole", description: "Interdimensional position for instant travel to pleasure zones.", image: "https://images.pexels.com/photos/5851702/pexels-photo-5851702.jpeg" },
-    { name: "The Supernova", description: "Explosive position that creates new stars of sensation.", image: "https://images.pexels.com/photos/12675574/pexels-photo-12675574.jpeg" },
-    { name: "The Matrix", description: "Reality-bending position where anything is possible.", image: "https://images.pexels.com/photos/6899789/pexels-photo-6899789.jpeg" },
-    { name: "The Möbius Strip", description: "Endless loop position with no beginning or end.", image: "https://images.pexels.com/photos/16251532/pexels-photo-16251532.jpeg" },
-    { name: "The Fractal", description: "Self-repeating position with infinite complexity and beauty.", image: "https://images.pexels.com/photos/5851702/pexels-photo-5851702.jpeg" },
-    { name: "The Perpetual Motion", description: "Energy-conserving position that never loses momentum.", image: "https://images.pexels.com/photos/12675574/pexels-photo-12675574.jpeg" },
-    { name: "The Zen Master", description: "Enlightened position that achieves perfect balance and harmony.", image: "https://images.pexels.com/photos/6899789/pexels-photo-6899789.jpeg" },
-    { name: "The Pandora's Box", description: "Position that unlocks all the mysteries of intimate pleasure.", image: "https://images.pexels.com/photos/16251532/pexels-photo-16251532.jpeg" }
+    // Classic & Essential Positions
+    { name: "Missionary", description: "The classic intimate position offering deep connection and eye contact.", howTo: "Partner A: Lie on back with legs slightly apart, knees can be bent. Partner B: Position on top, supporting weight on forearms, chest-to-chest contact with Partner A." },
+    { name: "Cowgirl", description: "Partner on top position allowing complete control of rhythm and depth.", howTo: "Partner A: Lie flat on back. Partner B: Straddle Partner A facing forward, knees on either side of torso, hands on chest or bed for balance." },
+    { name: "Reverse Cowgirl", description: "Top position facing away for different angles and visual stimulation.", howTo: "Partner A: Lie on back. Partner B: Straddle Partner A facing toward feet, hands on Partner A's thighs or bed for support." },
+    { name: "Doggy Style", description: "Rear-entry position for deep penetration and primal connection.", howTo: "Partner A: Position on hands and knees, back naturally arched. Partner B: Kneel behind, hands on Partner A's hips or lower back." },
+    { name: "Spooning", description: "Side-by-side intimate position perfect for slow, tender moments.", howTo: "Partner A: Lie on side. Partner B: Lie behind Partner A on same side, body curved to match Partner A's shape, arm around waist." },
+    
+    // Standing Positions
+    { name: "Standing Missionary", description: "Upright version of the classic with added thrill and challenge.", howTo: "Partner A: Stand with back against wall, legs slightly apart. Partner B: Stand facing Partner A, supporting Partner A's thighs." },
+    { name: "Standing Doggy", description: "Vertical rear-entry against a surface for spontaneous encounters.", howTo: "Partner A: Stand leaning forward against wall or furniture. Partner B: Stand behind, adjusting height as needed." },
+    { name: "Lifted Standing", description: "Full lift position requiring strength and trust.", howTo: "Partner A: Wrap legs around Partner B's waist, arms around neck. Partner B: Support Partner A's thighs/buttocks, back against wall optional." },
+    
+    // Sitting Positions
+    { name: "The Lotus", description: "Spiritual sitting position promoting deep intimacy and connection.", howTo: "Partner A: Sit cross-legged. Partner B: Sit on Partner A's lap facing them, legs wrapped around Partner A's waist." },
+    { name: "The Chair", description: "Furniture-assisted position for comfort and new angles.", howTo: "Partner A: Sit on sturdy chair. Partner B: Straddle Partner A, facing forward or backward, using chair arms for support." },
+    { name: "Reverse Lotus", description: "Sitting position with partner facing away for different sensations.", howTo: "Partner A: Sit with legs extended. Partner B: Sit between Partner A's legs facing away, leaning back against Partner A's chest." },
+    
+    // Advanced & Flexible Positions
+    { name: "The Bridge", description: "Athletic position requiring flexibility and core strength.", howTo: "Partner A: Lie on back, lift into bridge pose using hands and feet. Partner B: Kneel between Partner A's legs, supporting lower back." },
+    { name: "The Pretzel", description: "Complex intertwining position for adventurous couples.", howTo: "Partner A: Lie on side, top leg bent across body. Partner B: Position perpendicular, one leg under and one over Partner A's legs." },
+    { name: "The Wheelbarrow", description: "Playful position requiring arm strength and balance.", howTo: "Partner A: Support upper body on hands, like pushup position. Partner B: Hold Partner A's legs/hips from behind." },
+    { name: "The Butterfly", description: "Edge position for optimal angles and deep connection.", howTo: "Partner A: Lie on back at edge of bed, hips at the edge. Partner B: Stand between Partner A's legs, supporting thighs." },
+    
+    // Side Positions
+    { name: "Side Straddle", description: "Modified spooning with more active movement.", howTo: "Partner A: Lie on side, lift top leg up. Partner B: Position behind in spooning, with one leg between Partner A's legs." },
+    { name: "Scissor Position", description: "Interlocking legs position for mutual control.", howTo: "Partner A: Lie on side. Partner B: Lie on side facing Partner A, legs interlocked like scissors." },
+    { name: "The T-Square", description: "Perpendicular position creating unique angles.", howTo: "Partner A: Lie on back. Partner B: Lie on side perpendicular to Partner A, creating a T-shape." },
+    
+    // Intimate & Slow Positions
+    { name: "The Yab-Yum", description: "Tantric position for spiritual and physical connection.", howTo: "Partner A: Sit with legs crossed. Partner B: Sit on Partner A's lap, wrapping legs around back, foreheads touching." },
+    { name: "The Seashell", description: "Flexible position for deep penetration and intimacy.", howTo: "Partner A: Lie on back, pull knees toward chest. Partner B: Kneel close, leaning forward over Partner A's folded position." },
+    { name: "The Cradle", description: "Nurturing position emphasizing comfort and closeness.", howTo: "Partner A: Lie on back. Partner B: Lie on top at an angle, head resting on Partner A's shoulder, bodies at slight angle." },
+    
+    // Kama Sutra Inspired
+    { name: "The Lotus Blossom", description: "Variation of lotus with gentle rocking motion.", howTo: "Partner A: Sit with legs folded. Partner B: Sit on lap facing Partner A, legs around waist, gentle rocking motion together." },
+    { name: "The Tigress", description: "Rear-entry position with Partner A's chest down.", howTo: "Partner A: Lie face down, hips slightly elevated. Partner B: Lie on top from behind, supporting weight on arms." },
+    { name: "The Swan", description: "Elegant position with arched back and graceful lines.", howTo: "Partner A: Kneel and lean forward, arms extended, back arched. Partner B: Kneel behind, hands on Partner A's hips." },
+    
+    // Playful & Fun Positions
+    { name: "The Rocking Horse", description: "Rhythmic position with Partner on top controlling motion.", howTo: "Partner A: Lie on back. Partner B: Straddle in cowgirl but lean forward, hands on Partner A's chest, rocking motion." },
+    { name: "The Spider", description: "Sitting position with both partners leaning back.", howTo: "Both partners: Sit facing each other, lean back on hands for support, legs interlocked." },
+    { name: "The X-Factor", description: "Creative position with bodies forming an X shape.", howTo: "Partner A: Lie diagonally on bed. Partner B: Position perpendicularly across Partner A, creating X formation." },
+    
+    // Oral Positions
+    { name: "The 69", description: "Mutual oral pleasure position for simultaneous satisfaction.", howTo: "Partner A: Lie on back. Partner B: Position on top facing opposite direction, heads at each other's genitals." },
+    { name: "Side 69", description: "Comfortable variation of 69 lying on sides.", howTo: "Both partners: Lie on sides facing each other, heads positioned for mutual oral contact." },
+    
+    // Edge & Surface Positions
+    { name: "The Tabletop", description: "Using furniture for height variation and support.", howTo: "Partner A: Lie on back on table/surface. Partner B: Stand at edge, Partner A's legs over Partner B's shoulders." },
+    { name: "The Countertop", description: "Kitchen counter position for spontaneous encounters.", howTo: "Partner A: Sit on counter edge. Partner B: Stand between Partner A's legs, Partner A wraps legs around waist." },
+    { name: "The Desk Job", description: "Office-inspired position using desk or surface.", howTo: "Partner A: Lean over desk/surface. Partner B: Stand behind, Partner A's hands supporting on surface." },
+    
+    // Shower & Bathroom Positions
+    { name: "Shower Standing", description: "Steamy position for bathroom encounters.", howTo: "Partner A: Stand facing shower wall. Partner B: Stand behind, one hand on wall for support, careful footing." },
+    { name: "Bathtub Sitting", description: "Water-based sitting position for relaxed intimacy.", howTo: "Partner A: Sit in tub. Partner B: Sit on Partner A's lap facing them, water providing buoyancy." },
+    
+    // Outdoor Inspired
+    { name: "The Picnic", description: "Ground-level position inspired by outdoor adventures.", howTo: "Partner A: Lie on back on blanket/soft surface. Partner B: Kneel between Partner A's legs, nature setting optional." },
+    { name: "The Hammock", description: "Swaying position for gentle, rhythmic motion.", howTo: "Partner A: Lie in hammock. Partner B: Stand beside hammock, Partner A's legs over edge, swaying motion." },
+    
+    // Tantric & Spiritual
+    { name: "The Sacred Spot", description: "Tantric position focusing on energy exchange.", howTo: "Partner A: Lie on back with pillow under hips. Partner B: Kneel upright, hands on Partner A's heart chakra area." },
+    { name: "The Meditation", description: "Mindful position for present-moment awareness.", howTo: "Partner A: Sit in meditation pose. Partner B: Sit on lap facing away, both focusing on breath and sensation." },
+    
+    // Creative & Unique
+    { name: "The Accordion", description: "Flexible position with alternating compression and extension.", howTo: "Partner A: Lie on back, knees bent. Partner B: Position on top, moving between compressed and extended positions." },
+    { name: "The Pendulum", description: "Swaying motion position for rhythmic pleasure.", howTo: "Partner A: Lie on back near bed edge. Partner B: Stand, creating pendulum-like swaying motion." },
+    { name: "The Puzzle Piece", description: "Interlocking position where bodies fit perfectly together.", howTo: "Partner A: Lie on side in curved position. Partner B: Fit behind in complementary curve, like puzzle pieces." },
+    { name: "The Time Warp", description: "Position that makes time stand still through intense connection.", howTo: "Partner A: Sit upright. Partner B: Sit facing Partner A, legs wrapped around, maintaining eye contact throughout." },
+    
+    // Strength & Athletic Positions
+    { name: "The Superhero", description: "Flying position requiring core strength.", howTo: "Partner A: Lie face down. Partner B: Lie on top with arms extended forward, supporting some weight." },
+    { name: "The Warrior", description: "Standing position showcasing strength and power.", howTo: "Partner A: Stand on one leg, other leg lifted. Partner B: Support lifted leg while standing, showing strength." },
+    { name: "The Gymnast", description: "Flexible position for the athletically inclined.", howTo: "Partner A: Move into flexible position (splits, etc.). Partner B: Position to complement Partner A's flexibility." },
+    
+    // Comfort & Relaxation
+    { name: "The Sunday Morning", description: "Lazy, comfortable position for relaxed intimacy.", howTo: "Partner A: Lie on side in comfortable position. Partner B: Spoon from behind, minimal effort, maximum comfort." },
+    { name: "The Afternoon Delight", description: "Midday position perfect for spontaneous moments.", howTo: "Partner A: Recline comfortably. Partner B: Position for easy access while both remain relaxed." },
+    { name: "The Midnight Snack", description: "Quick position for late-night encounters.", howTo: "Partner A: Bend over bed edge slightly. Partner B: Stand behind for quick, satisfying connection." },
+    
+    // Romantic & Emotional
+    { name: "The Love Letter", description: "Position focused on emotional connection and communication.", howTo: "Partner A: Lie comfortably. Partner B: Position for easy eye contact and whispered sweet words." },
+    { name: "The First Kiss", description: "Tender position reminiscent of early relationship moments.", howTo: "Partner A: Sit upright. Partner B: Sit on lap facing Partner A, focusing on gentle kisses and caresses." },
+    { name: "The Anniversary", description: "Special position for celebrating your connection.", howTo: "Partner A: Lie in favorite position. Partner B: Position to recreate your most memorable intimate moment together." }
 ];
 
-let isRolling = false;
-let twoPlayerMode = false;
+let isGenerating = false;
 
-function togglePlayerMode() {
-    const checkbox = document.getElementById('twoPlayerMode');
-    const dice2Wrapper = document.getElementById('dice2Wrapper');
+function generatePosition() {
+    if (isGenerating) return;
     
-    twoPlayerMode = checkbox.checked;
-    
-    if (twoPlayerMode) {
-        dice2Wrapper.style.display = 'block';
-        dice2Wrapper.style.animation = 'fadeIn 0.5s ease-in-out';
-    } else {
-        dice2Wrapper.style.display = 'none';
-    }
-    
-    // Reset display
-    updateDisplay("NO FEAR BE BRAVE", "Press two-player mode if you're both excited");
-}
-
-function rollDice() {
-    if (isRolling) return;
-    
-    isRolling = true;
-    const rollButton = document.getElementById('rollButton');
-    rollButton.disabled = true;
-    rollButton.textContent = '🎲 Rolling... 🎲';
-    
-    // Start dice rolling animation (purely visual)
-    const dice1 = document.getElementById('dice1');
-    const dice2 = document.getElementById('dice2');
-    
-    dice1.classList.add('rolling');
-    if (twoPlayerMode) {
-        dice2.classList.add('rolling');
-    }
+    isGenerating = true;
+    const generateButton = document.getElementById('generateButton');
+    generateButton.disabled = true;
+    generateButton.textContent = '🔥 Generating... 🔥';
     
     // Clear previous results
-    updateDisplay("🎲 Rolling dice... 🎲", "");
+    updateDisplay("🔥 Generating new position... 🔥", "");
     
-    // Simulate rolling delay
+    // Simulate generation delay for excitement
     setTimeout(() => {
-        // Generate random dice values (just for visual effect)
-        const die1Value = Math.floor(Math.random() * 6) + 1;
-        const die2Value = twoPlayerMode ? Math.floor(Math.random() * 6) + 1 : null;
-        
-        // Stop rolling animation and show final faces
-        dice1.classList.remove('rolling');
-        if (twoPlayerMode) {
-            dice2.classList.remove('rolling');
-        }
-        
-        // Rotate dice to show the rolled values (visual only)
-        rotateDiceToValue(dice1, die1Value);
-        if (twoPlayerMode) {
-            rotateDiceToValue(dice2, die2Value);
-        }
-        
         // Select completely random position from entire database
-        setTimeout(() => {
-            const randomIndex = Math.floor(Math.random() * sexPositions.length);
-            const position = sexPositions[randomIndex];
-            
-            // Display results
-            const instructions = position.howTo || "Partner A: Find a comfortable base position. Partner B: Align and position your body to complement Partner A's positioning. Both partners: Adjust angles, height, and body alignment for optimal structural support and comfort.";
-            updateDisplay(position.name, position.description, instructions);
-            
-            // Re-enable button
-            rollButton.disabled = false;
-            rollButton.textContent = '🎲 Roll Again 🎲';
-            isRolling = false;
-        }, 500);
+        const randomIndex = Math.floor(Math.random() * sexPositions.length);
+        const position = sexPositions[randomIndex];
         
-    }, 2000); // 2 second rolling animation
-}
-
-function rotateDiceToValue(dice, value) {
-    // Dice face rotations to show specific numbers (visual only)
-    const rotations = {
-        1: 'rotateX(0deg) rotateY(0deg)',      // front
-        2: 'rotateX(0deg) rotateY(180deg)',    // back  
-        3: 'rotateX(0deg) rotateY(90deg)',     // right
-        4: 'rotateX(0deg) rotateY(-90deg)',    // left
-        5: 'rotateX(-90deg) rotateY(0deg)',    // top
-        6: 'rotateX(90deg) rotateY(0deg)'      // bottom
-    };
-    
-    dice.style.transform = rotations[value];
+        // Display results
+        const instructions = position.howTo || "Partner A: Find a comfortable base position. Partner B: Align and position your body to complement Partner A's positioning. Both partners: Communicate and adjust for optimal comfort and connection.";
+        updateDisplay(position.name, position.description, instructions);
+        
+        // Re-enable button
+        generateButton.disabled = false;
+        generateButton.textContent = '🔥 Generate Another 🔥';
+        isGenerating = false;
+    }, 1500); // 1.5 second generation time
 }
 
 function updateDisplay(name, description, instructions = null) {
     document.getElementById('positionName').textContent = name;
     document.getElementById('positionDescription').textContent = description;
-
+    
     const instructionsElement = document.getElementById('positionInstructions');
     const instructionsContent = document.getElementById('instructionsContent');
     if (instructions) {
@@ -224,23 +131,21 @@ function updateDisplay(name, description, instructions = null) {
 }
 
 // Initialize display
-updateDisplay("NO FEAR BE BRAVE", "Press two-player mode if you're both excited");
+updateDisplay("NO FEAR BE BRAVE", "Click the button below to discover a new position!");
 
-// Add some visual effects
+// Add visual effects to button
 document.addEventListener('DOMContentLoaded', function() {
-    const diceElements = document.querySelectorAll('.dice');
+    const generateButton = document.getElementById('generateButton');
     
-    diceElements.forEach(dice => {
-        dice.addEventListener('mouseenter', function() {
-            if (!isRolling) {
-                this.style.transform += ' scale(1.1)';
-            }
-        });
-        
-        dice.addEventListener('mouseleave', function() {
-            if (!isRolling) {
-                this.style.transform = this.style.transform.replace(' scale(1.1)', '');
-            }
-        });
+    generateButton.addEventListener('mouseenter', function() {
+        if (!isGenerating) {
+            this.style.transform = 'translateY(-3px) scale(1.02)';
+        }
+    });
+    
+    generateButton.addEventListener('mouseleave', function() {
+        if (!isGenerating) {
+            this.style.transform = 'translateY(0) scale(1)';
+        }
     });
 });
