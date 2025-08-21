@@ -183,8 +183,8 @@ function rollDice() {
             const position = sexPositions[randomIndex];
             
             // Display results
-            const instructions = position.howTo || "1. Get comfortable and communicate openly. 2. Start slowly and build intimacy. 3. Focus on each other's comfort and pleasure. 4. Adjust positions as needed. 5. Enjoy the connection and experience together.";
-            updateDisplay(position.name, position.description, position.image, instructions);
+            const instructions = position.howTo || "Partner A: Position yourself comfortably. Partner B: Align your body accordingly. Both: Communicate and adjust positioning for optimal comfort and connection.";
+            updateDisplay(position.name, position.description, instructions);
             
             // Re-enable button
             rollButton.disabled = false;
@@ -209,18 +209,9 @@ function rotateDiceToValue(dice, value) {
     dice.style.transform = rotations[value];
 }
 
-function updateDisplay(name, description, imageUrl = null, instructions = null) {
+function updateDisplay(name, description, instructions = null) {
     document.getElementById('positionName').textContent = name;
     document.getElementById('positionDescription').textContent = description;
-
-    const imageElement = document.getElementById('positionImage');
-    if (imageUrl) {
-        imageElement.src = imageUrl;
-        imageElement.alt = name;
-        imageElement.style.display = 'block';
-    } else {
-        imageElement.style.display = 'none';
-    }
 
     const instructionsElement = document.getElementById('positionInstructions');
     const instructionsContent = document.getElementById('instructionsContent');
