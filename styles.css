@@ -12,6 +12,10 @@ body {
     margin: 0 auto;
     text-align: center;
     padding: 20px;
+    background-image: url(https://cdn.builder.io/api/v1/image/assets%2F1d2ad6418a9b4a12aee196e509265a3e%2Ff671832ee0ce4d36b016468f7cdf3b2a);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .page-title {
