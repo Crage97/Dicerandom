@@ -11,9 +11,9 @@ const sexPositions = [
     { name: "The Bridge", description: "Advanced position requiring flexibility where one partner creates a bridge arch.", howTo: "Partner A: Lie on back, then lift hips high into bridge position using hands and feet as support points, creating an arch. Partner B: Kneel or stand between Partner A's legs, supporting Partner A's lower back/hips while maintaining the bridge structure." },
     { name: "Side Straddle", description: "Creative side position combining elements of spooning with more active movement.", howTo: "Partner A: Lie on side, lift top leg up and back. Partner B: Position behind Partner A in modified spooning, with one leg between Partner A's legs and one leg over Partner A's raised thigh. Partner A's raised leg rests on Partner B's hip/thigh." },
     { name: "The Chair", description: "Utilizes furniture for support and new angles of intimacy and comfort.", howTo: "Partner A: Sit on sturdy chair with feet flat on floor, back against chair back. Partner B: Straddle Partner A either facing forward or backward, knees on either side of Partner A's hips, using chair arms or Partner A's shoulders for support and balance." },
-    { name: "The Butterfly", description: "Partner lies on edge of bed/surface with hips positioned for optimal angle and comfort.", image: "https://images.pexels.com/photos/5851702/pexels-photo-5851702.jpeg" },
-    { name: "The Pretzel Dip", description: "Complex position combining multiple angles for varied sensations and deep connection.", image: "https://images.pexels.com/photos/12675574/pexels-photo-12675574.jpeg" },
-    { name: "The Seashell", description: "Flexible position where receiving partner's legs are positioned for maximum intimacy.", image: "https://images.pexels.com/photos/6899789/pexels-photo-6899789.jpeg" },
+    { name: "The Butterfly", description: "Partner lies on edge of bed/surface with hips positioned for optimal angle and comfort.", howTo: "Partner A: Lie on back at edge of bed, hips right at the edge, legs can hang down or be supported. Partner B: Stand between Partner A's legs, height adjusted by bending knees or using a step, hands support Partner A's thighs or hips." },
+    { name: "The Pretzel Dip", description: "Complex position combining multiple angles for varied sensations and deep connection.", howTo: "Partner A: Lie on side with bottom leg straight, top leg bent and crossed over. Partner B: Position perpendicular to Partner A, one leg under Partner A's straight leg, one leg over Partner A's bent leg, creating an interwoven structure." },
+    { name: "The Seashell", description: "Flexible position where receiving partner's legs are positioned for maximum intimacy.", howTo: "Partner A: Lie on back, pull knees up toward chest and shoulders, ankles near ears if flexible. Partner B: Kneel close to Partner A, leaning forward over Partner A's folded body, hands can support Partner A's ankles or thighs." },
     { name: "The Tabletop", description: "Partner positioned on a table or elevated surface for height variation and comfort.", image: "https://images.pexels.com/photos/16251532/pexels-photo-16251532.jpeg" },
     { name: "The T-Bone", description: "Perpendicular position creating a T-shape for unique angles and sensations.", image: "https://images.pexels.com/photos/5851702/pexels-photo-5851702.jpeg" },
     { name: "The X Factor", description: "Crossing position that creates intense intimacy through unique body positioning.", image: "https://images.pexels.com/photos/12675574/pexels-photo-12675574.jpeg" },
@@ -183,7 +183,7 @@ function rollDice() {
             const position = sexPositions[randomIndex];
             
             // Display results
-            const instructions = position.howTo || "Partner A: Position yourself comfortably. Partner B: Align your body accordingly. Both: Communicate and adjust positioning for optimal comfort and connection.";
+            const instructions = position.howTo || "Partner A: Find a comfortable base position. Partner B: Align and position your body to complement Partner A's positioning. Both partners: Adjust angles, height, and body alignment for optimal structural support and comfort.";
             updateDisplay(position.name, position.description, instructions);
             
             // Re-enable button
