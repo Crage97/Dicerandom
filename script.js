@@ -183,7 +183,8 @@ function rollDice() {
             const position = sexPositions[randomIndex];
             
             // Display results
-            updateDisplay(position.name, position.description, position.image, position.howTo);
+            const instructions = position.howTo || "1. Get comfortable and communicate openly. 2. Start slowly and build intimacy. 3. Focus on each other's comfort and pleasure. 4. Adjust positions as needed. 5. Enjoy the connection and experience together.";
+            updateDisplay(position.name, position.description, position.image, instructions);
             
             // Re-enable button
             rollButton.disabled = false;
