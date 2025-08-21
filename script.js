@@ -102,7 +102,7 @@ function rollDice() {
             const position = findPosition(diceArray);
             
             // Display results
-            updateDisplay(position.name, position.description);
+            updateDisplay(position.name, position.description, position.image);
             
             if (twoPlayerMode) {
                 document.getElementById('diceValues').textContent = `🎲 Rolled: ${die1Value} & ${die2Value}`;
@@ -173,9 +173,18 @@ function findPosition(diceArray) {
     };
 }
 
-function updateDisplay(name, description) {
+function updateDisplay(name, description, imageUrl = null) {
     document.getElementById('positionName').textContent = name;
     document.getElementById('positionDescription').textContent = description;
+
+    const imageElement = document.getElementById('positionImage');
+    if (imageUrl) {
+        imageElement.src = imageUrl;
+        imageElement.alt = name;
+        imageElement.style.display = 'block';
+    } else {
+        imageElement.style.display = 'none';
+    }
 }
 
 // Initialize display
