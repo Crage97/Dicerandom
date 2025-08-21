@@ -1,40 +1,40 @@
-// Sex positions database with Wikipedia references
+// Sex positions database with Wikipedia references and romantic images
 const sexPositions = [
     // Single die positions (1-6)
-    { dice: [1], name: "Missionary", description: "Classic face-to-face position with intimate eye contact. One partner lies on their back while the other lies on top." },
-    { dice: [2], name: "Doggy Style", description: "Rear-entry position where one partner bends over while the other enters from behind, allowing for deep penetration." },
-    { dice: [3], name: "Cowgirl", description: "Woman on top position where the receiving partner straddles and controls the rhythm and depth." },
-    { dice: [4], name: "Spooning", description: "Side-by-side position where partners lie like spoons, intimate and comfortable for extended sessions." },
-    { dice: [5], name: "Standing", description: "Upright position that can be done against a wall or free-standing for adventurous couples." },
-    { dice: [6], name: "The Lotus", description: "Sitting position where partners face each other with legs wrapped around, perfect for intimacy and connection." },
+    { dice: [1], name: "Missionary", description: "Classic face-to-face position with intimate eye contact. One partner lies on their back while the other lies on top.", image: "https://images.pexels.com/photos/6899789/pexels-photo-6899789.jpeg" },
+    { dice: [2], name: "Doggy Style", description: "Rear-entry position where one partner bends over while the other enters from behind, allowing for deep penetration.", image: "https://images.pexels.com/photos/16251532/pexels-photo-16251532.jpeg" },
+    { dice: [3], name: "Cowgirl", description: "Woman on top position where the receiving partner straddles and controls the rhythm and depth.", image: "https://images.pexels.com/photos/5851702/pexels-photo-5851702.jpeg" },
+    { dice: [4], name: "Spooning", description: "Side-by-side position where partners lie like spoons, intimate and comfortable for extended sessions.", image: "https://images.pexels.com/photos/12675574/pexels-photo-12675574.jpeg" },
+    { dice: [5], name: "Standing", description: "Upright position that can be done against a wall or free-standing for adventurous couples.", image: "https://images.pexels.com/photos/6899789/pexels-photo-6899789.jpeg" },
+    { dice: [6], name: "The Lotus", description: "Sitting position where partners face each other with legs wrapped around, perfect for intimacy and connection.", image: "https://images.pexels.com/photos/16251532/pexels-photo-16251532.jpeg" },
     
     // Two dice combinations (2-12)
-    { dice: [1, 1], name: "The Butterfly", description: "Partner lies on edge of bed/surface with hips positioned for optimal angle and comfort." },
-    { dice: [1, 2], name: "Reverse Cowgirl", description: "Woman on top but facing away, allowing for different sensations and visual appeal." },
-    { dice: [1, 3], name: "The Bridge", description: "Advanced position requiring flexibility where one partner creates a bridge arch." },
-    { dice: [1, 4], name: "Side Straddle", description: "Creative side position combining elements of spooning with more active movement." },
-    { dice: [1, 5], name: "The Pretzel Dip", description: "Complex position combining multiple angles for varied sensations and deep connection." },
-    { dice: [1, 6], name: "The Seashell", description: "Flexible position where receiving partner's legs are positioned for maximum intimacy." },
-    
-    { dice: [2, 2], name: "The Tabletop", description: "Partner positioned on a table or elevated surface for height variation and comfort." },
-    { dice: [2, 3], name: "The T-Bone", description: "Perpendicular position creating a T-shape for unique angles and sensations." },
-    { dice: [2, 4], name: "The Chair", description: "Utilizes furniture for support and new angles of intimacy and comfort." },
-    { dice: [2, 5], name: "The X Factor", description: "Crossing position that creates intense intimacy through unique body positioning." },
-    { dice: [2, 6], name: "The Lazy Dog", description: "Relaxed variation of doggy style with more comfort for extended sessions." },
-    
-    { dice: [3, 3], name: "The Flatiron", description: "Lying flat position with legs closed for increased tightness and sensation." },
-    { dice: [3, 4], name: "Face Off", description: "Intense eye contact position while seated, perfect for emotional connection." },
-    { dice: [3, 5], name: "The Wheelbarrow", description: "Adventurous position requiring strength and balance for the thrill-seeking couple." },
-    { dice: [3, 6], name: "The Crab Walk", description: "Playful and challenging position that requires coordination and flexibility." },
-    
-    { dice: [4, 4], name: "The Scoop Me Up", description: "Comfortable spooning variation with enhanced intimacy and ease of movement." },
-    { dice: [4, 5], name: "The Standing Split", description: "Advanced standing position requiring flexibility and balance for adventurous partners." },
-    { dice: [4, 6], name: "The Cuddle Huddle", description: "Intimate position focused on closeness and emotional connection during intimacy." },
-    
-    { dice: [5, 5], name: "The Pinball Wizard", description: "Dynamic position with lots of movement and energy for playful couples." },
-    { dice: [5, 6], name: "The Hoverboard", description: "Challenging position that seems to defy gravity, requiring strength and coordination." },
-    
-    { dice: [6, 6], name: "The Magic Mountain", description: "Ultimate challenge position combining flexibility, strength, and adventure for experienced couples." }
+    { dice: [1, 1], name: "The Butterfly", description: "Partner lies on edge of bed/surface with hips positioned for optimal angle and comfort.", image: "https://images.pexels.com/photos/5851702/pexels-photo-5851702.jpeg" },
+    { dice: [1, 2], name: "Reverse Cowgirl", description: "Woman on top but facing away, allowing for different sensations and visual appeal.", image: "https://images.pexels.com/photos/16251532/pexels-photo-16251532.jpeg" },
+    { dice: [1, 3], name: "The Bridge", description: "Advanced position requiring flexibility where one partner creates a bridge arch.", image: "https://images.pexels.com/photos/6899789/pexels-photo-6899789.jpeg" },
+    { dice: [1, 4], name: "Side Straddle", description: "Creative side position combining elements of spooning with more active movement.", image: "https://images.pexels.com/photos/12675574/pexels-photo-12675574.jpeg" },
+    { dice: [1, 5], name: "The Pretzel Dip", description: "Complex position combining multiple angles for varied sensations and deep connection.", image: "https://images.pexels.com/photos/5851702/pexels-photo-5851702.jpeg" },
+    { dice: [1, 6], name: "The Seashell", description: "Flexible position where receiving partner's legs are positioned for maximum intimacy.", image: "https://images.pexels.com/photos/16251532/pexels-photo-16251532.jpeg" },
+
+    { dice: [2, 2], name: "The Tabletop", description: "Partner positioned on a table or elevated surface for height variation and comfort.", image: "https://images.pexels.com/photos/6899789/pexels-photo-6899789.jpeg" },
+    { dice: [2, 3], name: "The T-Bone", description: "Perpendicular position creating a T-shape for unique angles and sensations.", image: "https://images.pexels.com/photos/12675574/pexels-photo-12675574.jpeg" },
+    { dice: [2, 4], name: "The Chair", description: "Utilizes furniture for support and new angles of intimacy and comfort.", image: "https://images.pexels.com/photos/5851702/pexels-photo-5851702.jpeg" },
+    { dice: [2, 5], name: "The X Factor", description: "Crossing position that creates intense intimacy through unique body positioning.", image: "https://images.pexels.com/photos/16251532/pexels-photo-16251532.jpeg" },
+    { dice: [2, 6], name: "The Lazy Dog", description: "Relaxed variation of doggy style with more comfort for extended sessions.", image: "https://images.pexels.com/photos/6899789/pexels-photo-6899789.jpeg" },
+
+    { dice: [3, 3], name: "The Flatiron", description: "Lying flat position with legs closed for increased tightness and sensation.", image: "https://images.pexels.com/photos/12675574/pexels-photo-12675574.jpeg" },
+    { dice: [3, 4], name: "Face Off", description: "Intense eye contact position while seated, perfect for emotional connection.", image: "https://images.pexels.com/photos/5851702/pexels-photo-5851702.jpeg" },
+    { dice: [3, 5], name: "The Wheelbarrow", description: "Adventurous position requiring strength and balance for the thrill-seeking couple.", image: "https://images.pexels.com/photos/16251532/pexels-photo-16251532.jpeg" },
+    { dice: [3, 6], name: "The Crab Walk", description: "Playful and challenging position that requires coordination and flexibility.", image: "https://images.pexels.com/photos/6899789/pexels-photo-6899789.jpeg" },
+
+    { dice: [4, 4], name: "The Scoop Me Up", description: "Comfortable spooning variation with enhanced intimacy and ease of movement.", image: "https://images.pexels.com/photos/12675574/pexels-photo-12675574.jpeg" },
+    { dice: [4, 5], name: "The Standing Split", description: "Advanced standing position requiring flexibility and balance for adventurous partners.", image: "https://images.pexels.com/photos/5851702/pexels-photo-5851702.jpeg" },
+    { dice: [4, 6], name: "The Cuddle Huddle", description: "Intimate position focused on closeness and emotional connection during intimacy.", image: "https://images.pexels.com/photos/16251532/pexels-photo-16251532.jpeg" },
+
+    { dice: [5, 5], name: "The Pinball Wizard", description: "Dynamic position with lots of movement and energy for playful couples.", image: "https://images.pexels.com/photos/6899789/pexels-photo-6899789.jpeg" },
+    { dice: [5, 6], name: "The Hoverboard", description: "Challenging position that seems to defy gravity, requiring strength and coordination.", image: "https://images.pexels.com/photos/12675574/pexels-photo-12675574.jpeg" },
+
+    { dice: [6, 6], name: "The Magic Mountain", description: "Ultimate challenge position combining flexibility, strength, and adventure for experienced couples.", image: "https://images.pexels.com/photos/5851702/pexels-photo-5851702.jpeg" }
 ];
 
 let isRolling = false;
