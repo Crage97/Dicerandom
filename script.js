@@ -183,7 +183,7 @@ function rollDice() {
             const position = sexPositions[randomIndex];
             
             // Display results
-            updateDisplay(position.name, position.description, position.image);
+            updateDisplay(position.name, position.description, position.image, position.howTo);
             
             // Re-enable button
             rollButton.disabled = false;
@@ -208,10 +208,10 @@ function rotateDiceToValue(dice, value) {
     dice.style.transform = rotations[value];
 }
 
-function updateDisplay(name, description, imageUrl = null) {
+function updateDisplay(name, description, imageUrl = null, instructions = null) {
     document.getElementById('positionName').textContent = name;
     document.getElementById('positionDescription').textContent = description;
-    
+
     const imageElement = document.getElementById('positionImage');
     if (imageUrl) {
         imageElement.src = imageUrl;
@@ -219,6 +219,15 @@ function updateDisplay(name, description, imageUrl = null) {
         imageElement.style.display = 'block';
     } else {
         imageElement.style.display = 'none';
+    }
+
+    const instructionsElement = document.getElementById('positionInstructions');
+    const instructionsContent = document.getElementById('instructionsContent');
+    if (instructions) {
+        instructionsContent.textContent = instructions;
+        instructionsElement.style.display = 'block';
+    } else {
+        instructionsElement.style.display = 'none';
     }
 }
 
