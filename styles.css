@@ -234,6 +234,28 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+}
+
+.position-image-container {
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+}
+
+.position-image {
+    width: 100%;
+    max-width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.position-image:hover {
+    transform: scale(1.05);
 }
 
 .position-name {
