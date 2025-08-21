@@ -11,48 +11,17 @@
         <h1 class="page-title">🎲 LETS CONNECT 🎲</h1>
         <p class="instructions">Roll the dice to discover new positions!</p>
         
-        <div class="player-controls">
-            <label class="player-toggle">
-                <input type="checkbox" id="twoPlayerMode" onchange="togglePlayerMode()">
-                <span class="toggle-text">Two Player Mode</span>
-            </label>
-        </div>
-
         <div class="result-display" id="resultDisplay">
             <div class="position-name" id="positionName">NO FEAR BE BRAVE</div>
-            <div class="position-description" id="positionDescription">Press two-player mode if you're both excited</div>
+            <div class="position-description" id="positionDescription">Click the button below to discover a new position!</div>
             <div class="position-instructions" id="positionInstructions" style="display: none;">
                 <h3 class="instructions-title">Body Positioning & Setup:</h3>
                 <div class="instructions-content" id="instructionsContent"></div>
             </div>
         </div>
 
-        <div class="dice-container" id="diceContainer">
-            <div class="dice-wrapper">
-                <div class="dice" id="dice1">
-                    <div class="dice-face front" data-value="1"></div>
-                    <div class="dice-face back" data-value="2"></div>
-                    <div class="dice-face right" data-value="3"></div>
-                    <div class="dice-face left" data-value="4"></div>
-                    <div class="dice-face top" data-value="5"></div>
-                    <div class="dice-face bottom" data-value="6"></div>
-                </div>
-            </div>
-
-            <div class="dice-wrapper dice-two" id="dice2Wrapper" style="display: none;">
-                <div class="dice" id="dice2">
-                    <div class="dice-face front" data-value="1"></div>
-                    <div class="dice-face back" data-value="2"></div>
-                    <div class="dice-face right" data-value="3"></div>
-                    <div class="dice-face left" data-value="4"></div>
-                    <div class="dice-face top" data-value="5"></div>
-                    <div class="dice-face bottom" data-value="6"></div>
-                </div>
-            </div>
-        </div>
-
-        <button class="roll-button" onclick="rollDice()" id="rollButton">
-            🎲 Roll the Dice 🎲
+        <button class="generate-button" onclick="generatePosition()" id="generateButton">
+            🔥 Generate Position 🔥
         </button>
     </div>
 
