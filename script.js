@@ -179,7 +179,7 @@ function updateDisplay(name, description) {
 }
 
 // Initialize display
-updateDisplay("Click \"Roll the Dice\" to begin your adventure!", "Toggle two-player mode if you're with a partner!");
+updateDisplay("NO FEAR BE BRAVE", "Press two-player mode if you're both excited");
 
 // Add some visual effects
 document.addEventListener('DOMContentLoaded', function() {
