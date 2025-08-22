@@ -12,9 +12,26 @@
         <p class="instructions">TOUCH NERVE TO EXPLORE</p>
 
         <div class="controls-section">
-            <button class="generate-button" onclick="generatePosition()" id="generateButton">
-                🔥 NERVE 🔥
-            </button>
+            <div class="main-controls">
+                <button class="generate-button" onclick="generatePosition()" id="generateButton">
+                    🔥 NERVE 🔥
+                </button>
+
+                <div class="secondary-controls">
+                    <button class="info-button" onclick="showInfoPage()" id="infoButton">
+                        📖 ALL POSITIONS
+                    </button>
+
+                    <div class="history-dropdown">
+                        <button class="history-button" onclick="toggleHistory()" id="historyButton">
+                            📜 HISTORY <span class="dropdown-arrow">▼</span>
+                        </button>
+                        <div class="history-list" id="historyList" style="display: none;">
+                            <div class="history-empty">No positions generated yet</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <div class="filter-controls">
                 <div class="toggle-container">
