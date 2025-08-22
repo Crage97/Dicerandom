@@ -376,14 +376,43 @@ body {
     }
 
     .filter-controls {
-        flex-direction: column;
+        gap: 15px;
+    }
+
+    .toggle-container {
+        padding: 12px 20px;
         gap: 10px;
     }
 
-    .filter-button,
-    .difficulty-filter {
-        font-size: 0.8rem;
-        padding: 8px 15px;
+    .toggle-label {
+        font-size: 0.9rem;
+    }
+
+    .toggle-switch {
+        width: 50px;
+        height: 25px;
+    }
+
+    .toggle-slider {
+        width: 19px;
+        height: 19px;
+        top: 3px;
+    }
+
+    .difficulty-slider-container {
+        padding: 15px;
+        max-width: 300px;
+    }
+
+    .slider-track {
+        height: 6px;
+        margin: 15px 0;
+    }
+
+    .slider-thumb {
+        width: 16px;
+        height: 16px;
+        top: -5px;
     }
 
     .position-metadata {
