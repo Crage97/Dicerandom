@@ -630,6 +630,59 @@ body {
         margin: 20px 0;
     }
 
+    .secondary-controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .info-button,
+    .history-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .modal-content {
+        max-width: 95vw;
+        max-height: 95vh;
+        margin: 10px;
+    }
+
+    .modal-header {
+        padding: 15px 20px;
+    }
+
+    .modal-header h2 {
+        font-size: 1.2rem;
+    }
+
+    .modal-body {
+        padding: 15px;
+        max-height: 75vh;
+    }
+
+    .position-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .position-card {
+        padding: 12px;
+    }
+
+    .difficulty-title {
+        font-size: 1.1rem;
+    }
+
+    .history-list {
+        left: -50px;
+        right: -50px;
+        max-height: 250px;
+    }
+
+    .history-item {
+        padding: 12px 15px;
+    }
+
     .generate-button {
         padding: 15px 35px;
         font-size: 1.2rem;
