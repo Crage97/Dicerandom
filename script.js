@@ -334,6 +334,9 @@ const emotionCategories = [
 
 let isGenerating = false;
 let randomMode = true;
+let selectedDifficultyLevel = 0; // 0-4 for COLD to HOT
+const difficultyLevels = ["COLD", "MID COLD", "WARM", "MID WARM", "HOT"];
+let isDragging = false;
 
 function generatePosition() {
     if (isGenerating) return;
@@ -355,13 +358,9 @@ function generatePosition() {
             const randomIndex = Math.floor(Math.random() * sexPositions.length);
             position = sexPositions[randomIndex];
         } else {
-            // Filter by selected difficulty
-            const difficultyFilter = document.getElementById('difficultyFilter').value;
-            let filteredPositions = sexPositions;
-
-            if (difficultyFilter) {
-                filteredPositions = sexPositions.filter(pos => pos.difficulty === difficultyFilter);
-            }
+            // Filter by selected difficulty level
+            const targetDifficulty = difficultyLevels[selectedDifficultyLevel];
+            let filteredPositions = sexPositions.filter(pos => pos.difficulty === targetDifficulty);
 
             if (filteredPositions.length === 0) {
                 filteredPositions = sexPositions; // Fallback to all if no matches
