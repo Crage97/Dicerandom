@@ -17,17 +17,30 @@
             </button>
 
             <div class="filter-controls">
-                <button class="filter-button" onclick="toggleRandomMode()" id="randomToggle">
-                    🎯 RANDOM MODE: ON
-                </button>
-                <select class="difficulty-filter" id="difficultyFilter" style="display: none;">
-                    <option value="">All Difficulties</option>
-                    <option value="COLD">🧊 COLD</option>
-                    <option value="MID COLD">❄️ MID COLD</option>
-                    <option value="WARM">☀️ WARM</option>
-                    <option value="MID WARM">🔶 MID WARM</option>
-                    <option value="HOT">🌶️ HOT</option>
-                </select>
+                <div class="toggle-container">
+                    <span class="toggle-label">🎯 RANDOM MODE</span>
+                    <div class="toggle-switch" onclick="toggleRandomMode()" id="toggleSwitch">
+                        <div class="toggle-slider" id="toggleSlider"></div>
+                    </div>
+                    <span class="toggle-status" id="toggleStatus">ON</span>
+                </div>
+
+                <div class="difficulty-slider-container" id="difficultySliderContainer" style="display: none;">
+                    <div class="slider-label">🌡️ DIFFICULTY LEVEL</div>
+                    <div class="difficulty-slider" id="difficultySlider">
+                        <div class="slider-track">
+                            <div class="slider-thumb" id="sliderThumb"></div>
+                        </div>
+                        <div class="slider-labels">
+                            <span>🧊 COLD</span>
+                            <span>❄️</span>
+                            <span>☀️ WARM</span>
+                            <span>🔶</span>
+                            <span>🌶️ HOT</span>
+                        </div>
+                    </div>
+                    <div class="selected-difficulty" id="selectedDifficulty">ALL LEVELS</div>
+                </div>
             </div>
         </div>
 
