@@ -337,6 +337,8 @@ let randomMode = true;
 let selectedDifficultyLevel = 0; // 0-4 for COLD to HOT
 const difficultyLevels = ["COLD", "MID COLD", "WARM", "MID WARM", "HOT"];
 let isDragging = false;
+let positionHistory = [];
+let isHistoryOpen = false;
 
 function generatePosition() {
     if (isGenerating) return;
@@ -373,6 +375,9 @@ function generatePosition() {
         // Display results with new attributes
         const instructions = position.howTo || "Partner A: Find a comfortable base position. Partner B: Align and position your body to complement Partner A's positioning. Both partners: Communicate and adjust for optimal comfort and connection.";
         updateDisplay(position.name, position.description, instructions, position.difficulty, position.emotion);
+
+        // Add to history
+        addToHistory(position);
 
         // Re-enable button
         generateButton.disabled = false;
@@ -519,6 +524,168 @@ function initializeDifficultySlider() {
     // Initialize position
     updateSliderPosition(sliderTrack.getBoundingClientRect().left);
 }
+
+// History Management
+function addToHistory(position) {
+    const timestamp = new Date().toLocaleString();
+    const historyItem = {
+        ...position,
+        timestamp: timestamp
+    };
+
+    // Add to beginning of array (most recent first)
+    positionHistory.unshift(historyItem);
+
+    // Keep only last 20 items
+    if (positionHistory.length > 20) {
+        positionHistory = positionHistory.slice(0, 20);
+    }
+
+    updateHistoryDisplay();
+}
+
+function updateHistoryDisplay() {
+    const historyList = document.getElementById('historyList');
+
+    if (positionHistory.length === 0) {
+        historyList.innerHTML = '<div class="history-empty">No positions generated yet</div>';
+        return;
+    }
+
+    const historyHTML = positionHistory.map((item, index) => `
+        <div class="history-item" onclick="selectFromHistory(${index})">
+            <div class="history-position-name">${item.name}</div>
+            <div class="history-metadata">
+                <span>${item.difficulty}</span>
+                <span>💭 ${item.emotion}</span>
+                <span>${item.timestamp}</span>
+            </div>
+        </div>
+    `).join('');
+
+    historyList.innerHTML = historyHTML;
+}
+
+function selectFromHistory(index) {
+    const position = positionHistory[index];
+    const instructions = position.howTo || "Partner A: Find a comfortable base position. Partner B: Align and position your body to complement Partner A's positioning. Both partners: Communicate and adjust for optimal comfort and connection.";
+    updateDisplay(position.name, position.description, instructions, position.difficulty, position.emotion);
+    toggleHistory(); // Close the dropdown
+}
+
+function toggleHistory() {
+    isHistoryOpen = !isHistoryOpen;
+    const historyList = document.getElementById('historyList');
+    const historyButton = document.getElementById('historyButton');
+
+    if (isHistoryOpen) {
+        historyList.style.display = 'block';
+        historyButton.classList.add('active');
+    } else {
+        historyList.style.display = 'none';
+        historyButton.classList.remove('active');
+    }
+}
+
+// Info Page Management
+function showInfoPage() {
+    const modal = document.getElementById('infoModal');
+    populateInfoPage();
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+}
+
+function closeInfoPage() {
+    const modal = document.getElementById('infoModal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+function populateInfoPage() {
+    const difficultySections = document.getElementById('difficultySections');
+
+    // Group positions by difficulty
+    const groupedPositions = {
+        "COLD": [],
+        "MID COLD": [],
+        "WARM": [],
+        "MID WARM": [],
+        "HOT": []
+    };
+
+    sexPositions.forEach(position => {
+        if (groupedPositions[position.difficulty]) {
+            groupedPositions[position.difficulty].push(position);
+        }
+    });
+
+    const difficultyEmojis = {
+        "COLD": "🧊",
+        "MID COLD": "❄️",
+        "WARM": "☀️",
+        "MID WARM": "🔶",
+        "HOT": "🌶️"
+    };
+
+    const colors = {
+        "COLD": "#87CEEB",
+        "MID COLD": "#90EE90",
+        "WARM": "#FFD700",
+        "MID WARM": "#FFA500",
+        "HOT": "#FF4500"
+    };
+
+    const sectionsHTML = Object.keys(groupedPositions).map(difficulty => {
+        const positions = groupedPositions[difficulty];
+        if (positions.length === 0) return '';
+
+        const positionsHTML = positions.map(position => `
+            <div class="position-card" onclick="selectPositionFromInfo('${position.name}')">
+                <div class="position-card-name">${position.name}</div>
+                <div class="position-card-description">${position.description}</div>
+                <div class="position-card-emotion">💭 ${position.emotion}</div>
+            </div>
+        `).join('');
+
+        return `
+            <div class="difficulty-section">
+                <div class="difficulty-title" style="color: ${colors[difficulty]}">
+                    ${difficultyEmojis[difficulty]} ${difficulty} (${positions.length} positions)
+                </div>
+                <div class="position-grid">
+                    ${positionsHTML}
+                </div>
+            </div>
+        `;
+    }).join('');
+
+    difficultySections.innerHTML = sectionsHTML;
+}
+
+function selectPositionFromInfo(positionName) {
+    const position = sexPositions.find(pos => pos.name === positionName);
+    if (position) {
+        const instructions = position.howTo || "Partner A: Find a comfortable base position. Partner B: Align and position your body to complement Partner A's positioning. Both partners: Communicate and adjust for optimal comfort and connection.";
+        updateDisplay(position.name, position.description, instructions, position.difficulty, position.emotion);
+        addToHistory(position);
+        closeInfoPage();
+    }
+}
+
+// Close dropdown when clicking outside
+document.addEventListener('click', function(event) {
+    const historyDropdown = document.querySelector('.history-dropdown');
+    if (isHistoryOpen && historyDropdown && !historyDropdown.contains(event.target)) {
+        toggleHistory();
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeInfoPage();
+    }
+});
 
 // Initialize display
 updateDisplay("NO FEAR BE BRAVE", "Random Adult Education", null, null, null);
