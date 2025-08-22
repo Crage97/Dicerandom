@@ -433,36 +433,112 @@ function updateDisplay(name, description, instructions = null, difficulty = null
 
 function toggleRandomMode() {
     randomMode = !randomMode;
-    const toggleButton = document.getElementById('randomToggle');
-    const difficultyFilter = document.getElementById('difficultyFilter');
+    const toggleSlider = document.getElementById('toggleSlider');
+    const toggleStatus = document.getElementById('toggleStatus');
+    const difficultySliderContainer = document.getElementById('difficultySliderContainer');
 
     if (randomMode) {
-        toggleButton.textContent = '🎯 RANDOM MODE: ON';
-        toggleButton.classList.remove('active');
-        difficultyFilter.style.display = 'none';
+        toggleSlider.style.transform = 'translateX(0)';
+        toggleSlider.style.backgroundColor = '#4CAF50';
+        toggleStatus.textContent = 'ON';
+        difficultySliderContainer.style.display = 'none';
     } else {
-        toggleButton.textContent = '🎯 RANDOM MODE: OFF';
-        toggleButton.classList.add('active');
-        difficultyFilter.style.display = 'block';
+        toggleSlider.style.transform = 'translateX(30px)';
+        toggleSlider.style.backgroundColor = '#f44336';
+        toggleStatus.textContent = 'OFF';
+        difficultySliderContainer.style.display = 'block';
     }
+}
+
+function initializeDifficultySlider() {
+    const sliderThumb = document.getElementById('sliderThumb');
+    const sliderTrack = document.querySelector('.slider-track');
+    const selectedDifficultyEl = document.getElementById('selectedDifficulty');
+
+    if (!sliderThumb || !sliderTrack) return;
+
+    function updateSliderPosition(x) {
+        const rect = sliderTrack.getBoundingClientRect();
+        const percentage = Math.max(0, Math.min(1, (x - rect.left) / rect.width));
+        const position = percentage * (rect.width - 20); // 20px is thumb width
+
+        sliderThumb.style.left = `${position}px`;
+
+        // Update difficulty level (0-4)
+        selectedDifficultyLevel = Math.round(percentage * 4);
+        const difficultyName = difficultyLevels[selectedDifficultyLevel];
+        const difficultyEmojis = ["🧊", "❄️", "☀️", "🔶", "🌶️"];
+
+        selectedDifficultyEl.textContent = `${difficultyEmojis[selectedDifficultyLevel]} ${difficultyName}`;
+
+        // Update thumb color based on difficulty
+        const colors = ["#87CEEB", "#90EE90", "#FFD700", "#FFA500", "#FF4500"];
+        sliderThumb.style.backgroundColor = colors[selectedDifficultyLevel];
+    }
+
+    // Mouse events
+    sliderThumb.addEventListener('mousedown', function(e) {
+        isDragging = true;
+        e.preventDefault();
+    });
+
+    document.addEventListener('mousemove', function(e) {
+        if (isDragging) {
+            updateSliderPosition(e.clientX);
+        }
+    });
+
+    document.addEventListener('mouseup', function() {
+        isDragging = false;
+    });
+
+    // Touch events for mobile
+    sliderThumb.addEventListener('touchstart', function(e) {
+        isDragging = true;
+        e.preventDefault();
+    });
+
+    document.addEventListener('touchmove', function(e) {
+        if (isDragging) {
+            const touch = e.touches[0];
+            updateSliderPosition(touch.clientX);
+        }
+    });
+
+    document.addEventListener('touchend', function() {
+        isDragging = false;
+    });
+
+    // Click on track to jump to position
+    sliderTrack.addEventListener('click', function(e) {
+        if (!isDragging) {
+            updateSliderPosition(e.clientX);
+        }
+    });
+
+    // Initialize position
+    updateSliderPosition(sliderTrack.getBoundingClientRect().left);
 }
 
 // Initialize display
 updateDisplay("NO FEAR BE BRAVE", "Random Adult Education", null, null, null);
 
-// Add visual effects to button
+// Add visual effects to button and initialize slider
 document.addEventListener('DOMContentLoaded', function() {
     const generateButton = document.getElementById('generateButton');
-    
+
     generateButton.addEventListener('mouseenter', function() {
         if (!isGenerating) {
             this.style.transform = 'translateY(-3px) scale(1.02)';
         }
     });
-    
+
     generateButton.addEventListener('mouseleave', function() {
         if (!isGenerating) {
             this.style.transform = 'translateY(0) scale(1)';
         }
     });
+
+    // Initialize the difficulty slider
+    setTimeout(initializeDifficultySlider, 100);
 });
