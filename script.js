@@ -131,7 +131,7 @@ function updateDisplay(name, description, instructions = null) {
 }
 
 // Initialize display
-updateDisplay("NO FEAR BE BRAVE", "Click the button below to discover a new position!");
+updateDisplay("NO FEAR BE BRAVE", "Random Adult Education");
 
 // Add visual effects to button
 document.addEventListener('DOMContentLoaded', function() {
