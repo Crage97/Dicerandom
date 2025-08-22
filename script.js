@@ -381,22 +381,6 @@ function generatePosition() {
     }, 1500); // 1.5 second generation time
 }
 
-function toggleRandomMode() {
-    randomMode = !randomMode;
-    const toggleButton = document.getElementById('randomToggle');
-    const difficultyFilter = document.getElementById('difficultyFilter');
-
-    if (randomMode) {
-        toggleButton.textContent = '🎯 RANDOM MODE: ON';
-        toggleButton.classList.remove('active');
-        difficultyFilter.style.display = 'none';
-    } else {
-        toggleButton.textContent = '🎯 RANDOM MODE: OFF';
-        toggleButton.classList.add('active');
-        difficultyFilter.style.display = 'block';
-    }
-}
-
 function updateDisplay(name, description, instructions = null, difficulty = null, emotion = null) {
     document.getElementById('positionName').textContent = name;
     document.getElementById('positionDescription').textContent = description;
