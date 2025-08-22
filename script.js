@@ -333,33 +333,69 @@ const emotionCategories = [
 ];
 
 let isGenerating = false;
+let randomMode = true;
 
 function generatePosition() {
     if (isGenerating) return;
-    
+
     isGenerating = true;
     const generateButton = document.getElementById('generateButton');
     generateButton.disabled = true;
     generateButton.textContent = '🔥 Generating... 🔥';
-    
+
     // Clear previous results
     updateDisplay("🔥 Generating new position... 🔥", "", null, null, null);
-    
+
     // Simulate generation delay for excitement
     setTimeout(() => {
-        // Select completely random position from entire database
-        const randomIndex = Math.floor(Math.random() * sexPositions.length);
-        const position = sexPositions[randomIndex];
-        
+        let position;
+
+        if (randomMode) {
+            // Select completely random position from entire database
+            const randomIndex = Math.floor(Math.random() * sexPositions.length);
+            position = sexPositions[randomIndex];
+        } else {
+            // Filter by selected difficulty
+            const difficultyFilter = document.getElementById('difficultyFilter').value;
+            let filteredPositions = sexPositions;
+
+            if (difficultyFilter) {
+                filteredPositions = sexPositions.filter(pos => pos.difficulty === difficultyFilter);
+            }
+
+            if (filteredPositions.length === 0) {
+                filteredPositions = sexPositions; // Fallback to all if no matches
+            }
+
+            const randomIndex = Math.floor(Math.random() * filteredPositions.length);
+            position = filteredPositions[randomIndex];
+        }
+
         // Display results with new attributes
         const instructions = position.howTo || "Partner A: Find a comfortable base position. Partner B: Align and position your body to complement Partner A's positioning. Both partners: Communicate and adjust for optimal comfort and connection.";
         updateDisplay(position.name, position.description, instructions, position.difficulty, position.emotion);
-        
+
         // Re-enable button
         generateButton.disabled = false;
         generateButton.textContent = '🔥 NERVE 🔥';
         isGenerating = false;
     }, 1500); // 1.5 second generation time
+}
+
+function toggleRandomMode() {
+    randomMode = !randomMode;
+    const toggleButton = document.getElementById('randomToggle');
+    const difficultyFilter = document.getElementById('difficultyFilter');
+
+    if (randomMode) {
+        toggleButton.textContent = '🎯 RANDOM MODE: ON';
+        toggleButton.classList.remove('active');
+        difficultyFilter.style.display = 'none';
+    } else {
+        toggleButton.textContent = '🎯 RANDOM MODE: OFF';
+        toggleButton.classList.add('active');
+        difficultyFilter.style.display = 'block';
+    }
 }
 
 function updateDisplay(name, description, instructions = null, difficulty = null, emotion = null) {
@@ -413,7 +449,7 @@ function updateDisplay(name, description, instructions = null, difficulty = null
 }
 
 // Initialize display
-updateDisplay("NO FEAR BE BRAVE", "Random Adult Education");
+updateDisplay("NO FEAR BE BRAVE", "Random Adult Education", null, null, null);
 
 // Add visual effects to button
 document.addEventListener('DOMContentLoaded', function() {
