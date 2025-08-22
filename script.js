@@ -365,7 +365,7 @@ function generatePosition() {
 function updateDisplay(name, description, instructions = null, difficulty = null, emotion = null) {
     document.getElementById('positionName').textContent = name;
     document.getElementById('positionDescription').textContent = description;
-    
+
     const instructionsElement = document.getElementById('positionInstructions');
     const instructionsContent = document.getElementById('instructionsContent');
     if (instructions) {
@@ -374,22 +374,38 @@ function updateDisplay(name, description, instructions = null, difficulty = null
     } else {
         instructionsElement.style.display = 'none';
     }
-    
-    // Update difficulty display
+
+    // Update difficulty display with volume bar
     const difficultyElement = document.getElementById('difficultyLevel');
+    const volumeBarElement = document.getElementById('volumeBar');
     if (difficulty && difficultyElement) {
         const diffInfo = difficultyInfo[difficulty];
-        difficultyElement.textContent = `${difficulty} - ${diffInfo.description}`;
-        difficultyElement.style.color = diffInfo.color;
+        difficultyElement.textContent = `${difficulty}`;
+        difficultyElement.style.backgroundColor = diffInfo.color;
         difficultyElement.style.display = 'block';
-    } else if (difficultyElement) {
-        difficultyElement.style.display = 'none';
+
+        // Update volume bar
+        if (volumeBarElement) {
+            const levels = ["COLD", "MID COLD", "WARM", "MID WARM", "HOT"];
+            const levelIndex = levels.indexOf(difficulty);
+            const percentage = ((levelIndex + 1) / levels.length) * 100;
+
+            const volumeFill = volumeBarElement.querySelector('.volume-fill');
+            if (volumeFill) {
+                volumeFill.style.width = `${percentage}%`;
+                volumeFill.style.backgroundColor = diffInfo.color;
+            }
+            volumeBarElement.style.display = 'block';
+        }
+    } else {
+        if (difficultyElement) difficultyElement.style.display = 'none';
+        if (volumeBarElement) volumeBarElement.style.display = 'none';
     }
-    
+
     // Update emotion display
     const emotionElement = document.getElementById('emotionCategory');
     if (emotion && emotionElement) {
-        emotionElement.textContent = `Emotion: ${emotion}`;
+        emotionElement.textContent = `💭 ${emotion}`;
         emotionElement.style.display = 'block';
     } else if (emotionElement) {
         emotionElement.style.display = 'none';

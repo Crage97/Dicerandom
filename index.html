@@ -11,15 +11,37 @@
         <h1 class="page-title">🎲 LETS CONNECT 🎲</h1>
         <p class="instructions">TOUCH NERVE TO EXPLORE</p>
 
-        <button class="generate-button" onclick="generatePosition()" id="generateButton">
-            🔥 NERVE 🔥
-        </button>
+        <div class="controls-section">
+            <button class="generate-button" onclick="generatePosition()" id="generateButton">
+                🔥 NERVE 🔥
+            </button>
+
+            <div class="filter-controls">
+                <button class="filter-button" onclick="toggleRandomMode()" id="randomToggle">
+                    🎯 RANDOM MODE: ON
+                </button>
+                <select class="difficulty-filter" id="difficultyFilter" style="display: none;">
+                    <option value="">All Difficulties</option>
+                    <option value="COLD">🧊 COLD</option>
+                    <option value="MID COLD">❄️ MID COLD</option>
+                    <option value="WARM">☀️ WARM</option>
+                    <option value="MID WARM">🔶 MID WARM</option>
+                    <option value="HOT">🌶️ HOT</option>
+                </select>
+            </div>
+        </div>
 
         <div class="result-display" id="resultDisplay">
             <div class="position-name" id="positionName">NO FEAR BE BRAVE</div>
             <div class="position-metadata">
-                <div class="difficulty-level" id="difficultyLevel" style="display: none;"></div>
-                <div class="emotion-category" id="emotionCategory" style="display: none;"></div>
+                <div class="difficulty-level" id="difficultyLevel"></div>
+                <div class="volume-bar" id="volumeBar">
+                    <div class="volume-fill"></div>
+                    <div class="volume-labels">
+                        <span>🧊</span><span>❄️</span><span>☀️</span><span>🔶</span><span>🌶️</span>
+                    </div>
+                </div>
+                <div class="emotion-category" id="emotionCategory"></div>
             </div>
             <div class="position-description" id="positionDescription">Random Adult Education</div>
             <div class="position-instructions" id="positionInstructions" style="display: none;">
